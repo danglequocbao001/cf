@@ -1,0 +1,88 @@
+  ion-header {
+    .back{
+      background-color: #64C18E;
+      margin-top: -2px;
+      img{
+          padding: 6px;   
+          width: 60px;
+          display: flex;
+          margin-top: 1px;
+          margin-left: 10px;
+          padding-top: 20px;
+      }
+  }
+    .border-header {
+      position: fixed;
+      width: 100vw;
+      background-color: #64C18E;
+      border-radius: 0px 0px 35px 35px;
+      /*smartphone*/
+      @media screen and (max-width: 768px){
+        height: 150px;
+      }
+      /*tablet nhỏ*/
+      @media screen and (min-width: 768px){
+        height: 220px;
+      }
+      /*Tablet lớn*/
+      @media screen and (min-width: 1024px){
+        height: 280px;
+      }
+    }
+      p {
+        color: #FFFFFF;
+        font: Bold 23px/70px Montserr at;
+        z-index: 21;
+        position: inherit;
+        text-align: center;
+        font-size: 30px;
+      }
+      ion-img {
+        z-index: 10;
+        width: 60vw;
+        margin: -20px auto 0px auto;
+        position: inherit;
+      }
+  }
+
+  ion-content{
+    section {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      .common{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+      }
+      .top{
+        margin-bottom: -8px;
+      }
+      .button{
+        width: 168px;
+        height: 181px;
+        background: #F1F1F1;
+        filter: drop-shadow(0px 2px 3px #b1b0b0);
+        margin-top: 20px;
+        border-radius: 33px;
+        color: #000000;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        ion-img {
+          width: 94px;
+          margin: 0 auto;
+          display: -webkit-box;
+          display: flex;
+          padding-top: 8px;
+        }
+        p {
+          margin: auto;
+          font-size: 21px;
+          text-align: center;
+        }
+      }
+    }
+  }

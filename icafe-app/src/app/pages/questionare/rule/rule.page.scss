@@ -1,0 +1,38 @@
+ion-header {
+    margin-bottom: 30px;
+    ion-item {
+        .backbtn {
+            margin-top: 20px;
+        }
+    }
+    ion-item {
+        .rule {
+            display: block;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: #3D3D3D;
+            margin-top: 30px;
+        }
+    }
+}
+
+ion-content {
+    ion-list {
+        width: 80%;
+        text-align: justify;
+        margin: 0 auto;
+        .inside-rule {
+            font-size: 18px;
+            float: left;
+            font-weight: 700;
+            color: #000000;
+        }
+        ion-label {
+            font-size: 18px;
+            float: left;
+            color: #000000;
+        
+        }
+    }
+}

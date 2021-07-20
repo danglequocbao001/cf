@@ -1,0 +1,70 @@
+<!-- <ion-header>
+    <ion-toolbar line="none" class="ion-no-border">
+        <ion-buttons slot="start" >
+            <ion-img (click)="back()" src="assets/images/back.png"></ion-img> -->
+            <!-- <ion-icon size="large" src="assets/images/back.png"></ion-icon> -->
+        <!-- </ion-buttons>
+        <ion-title>Đăng Nhập</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+<ion-header class="ion-no-border">
+    <ion-img src="assets/images/back.svg" class="back" (click)="back()"></ion-img>
+    <!-- <ion-img src="assets/images/lavashin-logo-white.svg" class="logo"></ion-img> -->
+    <ion-label class="label ion-text-center">ĐĂNG NHẬP</ion-label>
+  </ion-header>
+<ion-content>
+    <form [formGroup]="formGroup">
+        <ion-row class="username">
+            <ion-label>Tên Đăng Nhập</ion-label>
+            <ion-input type="text" formControlName="line1" placeholder="Nhập tên đăng nhập hoặc số điện thoại...">
+            </ion-input>
+        </ion-row>
+        <ion-row class="password">
+            <ion-label>Mật Khẩu</ion-label>
+                <ion-input type="password" formControlName="line2"
+                placeholder="Nhập vào mật khẩu...">
+                </ion-input>
+        </ion-row>
+        <ion-row class="button">
+            <ion-button [disabled]="showSpinner || formGroup.value.line1 == '' || formGroup.value.line2 == '' " (click)="login()"><ion-spinner *ngIf="showSpinner"></ion-spinner>ĐĂNG NHẬP</ion-button>
+        </ion-row>
+        <ion-row class="noaccount">
+            <ion-label (click)="noaccount()">Bạn chưa có tài khoản?</ion-label>
+            <ion-label (click)="forgotPassword()">Quên mật khẩu?</ion-label>
+        </ion-row>
+    </form>
+    <!-- <div class="content"> -->
+    <!-- <div class="form-login"> -->
+    <!-- <form [formGroup]="formGroup" action="">
+                <ion-row>
+                    <ion-col>
+                        <div class="validator-notnull">
+                            <label for="email">Tên đăng nhập</label>
+                            <ion-input type="text" id="username" formControlName="username"
+                                placeholder="Nhập tên đăng nhập hoặc số điện thoại..."></ion-input>
+                            <app-required-field
+                                [isShow]="formGroup.controls['username'].hasError('required') && isCheckLogin">
+                            </app-required-field>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="validator-notnull">
+                            <label class="validator-notnull" for="password">Mật khẩu</label>
+                            <ion-input type="password" id="password" formControlName="password"
+                                placeholder="Nhập vào mật khẩu..."></ion-input>
+                            <app-required-field
+                                [isShow]="formGroup.controls['password'].hasError('required') && isCheckLogin">
+                            </app-required-field>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+
+                </ion-row>
+            </form> -->
+    <!-- </div> -->
+
+    <!-- </div> -->
+</ion-content>

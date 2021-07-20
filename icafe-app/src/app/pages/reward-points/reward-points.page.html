@@ -1,0 +1,21 @@
+<!-- <app-head-title [isReward]='true'></app-head-title> -->
+<ion-header class="ion-no-border">
+  <div class="back">
+      <img src="assets/images/back.svg" (click)="back()" />
+  </div>
+  <ion-label>Điểm thưởng</ion-label>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <div class="info">
+        <img onerror="this.src='../../assets/images/user-info-green.svg';" [src]="image_url">
+        <ion-label class="fullname">{{userInfo.fullname}}</ion-label>
+        <ion-label class="member">Thành viên chuẩn</ion-label>
+        <ion-label class="turn">Điểm tích lũy: {{getPoints | currency:' ':'symbol':'3.0':'vi' }}</ion-label>
+        <ion-label class="turn">Lượt chơi đố vui: {{getTurns}}</ion-label>
+        <!-- <ion-label>buy_slots: {{buySlots}}</ion-label> -->
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,144 @@
+ion-header{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    .back{
+        img{
+            padding: 6px;
+            width: 60px;
+            display: -webkit-box;
+            display: flex;
+            margin-top: 1px;
+            margin-left: 10px;
+            padding-top: 20px;
+        }
+    }
+    ion-title{
+        color:#5EB57A ;
+        text-align: center;
+        justify-content: center;
+        display: block;
+        margin-top: 15px;
+    }
+}
+ion-content{
+    ion-grid{
+        padding: 0;
+        ion-row{
+
+            ion-col{
+                text-align: center;
+                .change{
+                    padding-top: 22px;
+                    color: #77CCDE;
+                    margin-right: -17px;
+                }
+            }
+        }
+        .order{
+            display: flex;
+            justify-content: space-around;
+            background-color: #ECEBEB;
+            height: 43px;
+            align-items: center;
+            .brief{
+                font-weight: 700;
+            }
+            .add{
+                color: #77CCDE;
+            }
+        }
+        .order-item{
+            display: flex;
+            justify-content: space-between;
+            padding: 19px 36px;
+            .food{
+                display: flex;
+                .amount{
+                    border: 1px solid #8E8E8E;
+                    padding: 7px;
+                    border-radius: 8px;
+                    color: #77CCDE;
+                    margin-right: 10px;
+                }
+            }
+            span{
+                display: flex;
+                align-items: center;
+            }
+        }
+        .note{
+            display: flex;
+            justify-content: center;
+            padding: 13px;
+            textarea{
+                width: 100%;
+                height: 95px;
+                border: 1px solid black;
+                font-size: 20px;
+                padding: 5px;
+            }
+        }
+        .price{
+            display: flex;
+            justify-content: space-around;
+            .cost{
+                display: flex;     
+                flex-direction: column;
+                .cost-temp{
+                    margin-top: 15px;
+                    color: #6C6C6C;
+                    font-weight: 700;
+                }
+            }
+        }
+        .promotion{
+            background-color: #DFF2F6;
+
+            p{
+                margin-top: 10px;
+            }
+            input{
+                margin: 5px 0;
+                border: none;
+                padding: 5px;
+            }
+            display: flex;
+            justify-content: space-around;
+        }
+        .tyof-pay{
+            .type-of{
+                p{
+                    font-weight: 700;
+                }
+            }
+            ion-col{
+                img{
+                    width: 14px;
+                    margin-top: 30px;
+                
+                }
+            }
+        }
+        .pay{
+            display: flex;
+            justify-content: space-around;
+            span{
+                color: #F0684D;
+                font-weight: 700;
+            }
+        }
+        .submit{
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            button{
+                border-radius: 12px;
+                background-color: #5EB57A;
+                padding: 14px;
+                color: #ffffff;
+            }
+        }
+    }
+}

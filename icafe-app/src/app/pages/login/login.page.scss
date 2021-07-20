@@ -1,0 +1,102 @@
+// ion-header{
+//     --box-shadow: none;
+//     ion-toolbar{
+//         --background:#64C18E;
+//         height: 75px;
+//         --box-shadow: none;
+//         border-bottom-left-radius: 20px;
+//         border-bottom-right-radius: 20px;
+        
+//         ion-buttons{
+//            ion-img{
+//             margin-left: 5px;
+//            }
+//         }
+//             ion-title{
+//                 color: #ffffff;
+//                 font-size: 22px;
+//                 font-family: Montserrat;
+//             }
+//     }
+// }
+ion-header{
+    background-color: #64C18E;
+    height: 145px;
+    border-radius: 0 0 30px 30px;
+    .back{
+        position: absolute;
+        width: 50px;
+        margin-top: 25px;
+        margin-left: 20px;
+    }
+    .label{
+        font-size: 23px;
+        font-weight: 700;
+        color: #ffffff;
+        display: block;
+        margin-top: 60px;
+    }
+    // .logo{
+    //     display: block;
+    //     width: 50%;
+    //     margin: 30px auto 30px auto;
+    //     padding-bottom: 100px;
+    // }
+}
+ion-content{
+    form{
+        .username{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 59px 21px;
+            ion-label{
+                width: 145px;
+                margin-left: 10px;
+                font-size: 17px;
+                display: block;
+            }
+            ion-input{
+                border-radius: 66px;
+                border: 1px solid #333333;
+                --padding-start: 10px;
+            }
+        }
+        .password{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: -42px 21px;
+            ion-label{
+                margin-left: 10px;
+                font-size: 17px;
+            }
+            ion-input{
+                border-radius: 66px;
+                border: 1px solid #333333;
+                --padding-start: 10px;
+            }
+     
+        }
+        .button{
+            margin-top: 25%;
+            ion-button{
+                width: 100%;
+                margin: 0 19px;
+                --background: #F47B60;
+                --border-radius: 52px;
+            }
+        }
+        .noaccount{
+            display: flex;
+            ion-label{
+                margin-top: 15px;
+                width: 100%;            
+                font-size: 16px;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+}
+

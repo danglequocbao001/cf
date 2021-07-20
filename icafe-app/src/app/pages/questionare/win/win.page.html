@@ -1,0 +1,16 @@
+<ion-app id="win-page">
+  <ion-header class="ion-no-border">
+    <ion-col>
+      <ion-item lines="none">
+        <ion-img class="win-img" src="../../assets/icon/win.svg"></ion-img>
+        <ion-col>
+          <ion-img class="cup-img" src="../../assets/icon/cup.svg"></ion-img>
+          <ion-label>+{{totalScore | currency:' ':'symbol':'3.0':'vi' }} Điểm</ion-label>
+        </ion-col>
+      </ion-item>
+      <ion-label>Còn {{turn}} lượt chơi hôm nay</ion-label>
+      <ion-button Fill="round" (click)="questionare()">CHƠI TIẾP</ion-button>
+    </ion-col>
+  </ion-header>
+</ion-app>
+

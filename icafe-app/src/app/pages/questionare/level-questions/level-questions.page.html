@@ -1,0 +1,120 @@
+<ion-header class="ion-padding" class="ion-no-border">
+  <ion-item class="heart" lines="none">
+      <ion-img src="../../assets/icon/heart.svg"></ion-img>
+      <ion-text class="heart-number">{{ heart }}</ion-text>
+  </ion-item>
+  <ion-item class="time" lines="none">
+      <!-- <ion-img class="time-border-img" src="../../assets/icon/middle-main-time-game.svg"></ion-img> -->
+      <ion-col>
+          <ion-row>
+            <ion-icon class="clock" name="time-outline"></ion-icon>
+            <ion-label class="time-counter">{{ time | async }}</ion-label>
+          </ion-row>
+          <ion-label class="question-counter">{{j+1}}/10 câu</ion-label>
+      </ion-col>
+  </ion-item>
+    <ion-item class="sound" lines="none">
+      <button slot="start" (click)="musicController()">
+        <!-- <ion-img id="sound-icon-check" class="sound-icon" src="../../assets/icon/sound.svg"></ion-img> -->
+        <ion-icon id="sound-icon-check" class="sound-icon" name="volume-high" size="large"></ion-icon>
+      </button>
+    </ion-item>
+</ion-header>
+
+<ion-content  class="ion-padding" *ngIf="getData.length > 0">
+  <ion-item class="topic" lines="none">
+    <ion-label>   </ion-label>
+  </ion-item>
+  <!-- <ion-label class="question" *ngFor="let oneQuestion of questionStuff[j].questions" >{{oneQuestion.question}}</ion-label> -->
+
+
+  <ion-label class="question">{{getData[j].question}}</ion-label>
+
+
+  <!-- <div class="question" *ngFor="let oneData of getData" >{{oneData.question}}
+  </div> -->
+
+  <ion-item class="cup" lines="none">
+    <ion-img class="heart" src="../../assets/icon/cup.svg"></ion-img>
+    <ion-label class="win">WIN</ion-label>
+  </ion-item>
+  <ion-row>
+    <div class="bottom-left" id="bottom-left" lines="none">
+      <span class="span-left" id="span-left" *ngFor="let i of scores" [ngClass]="i.level < score ? 'scored' : '' "> {{i.level}} </span>
+    </div>
+    <div class="bottom-right" id="bottom-right" lines="none">
+      <span class="span-right" id="span-right" *ngFor="let j of upscores"> {{j.level}} </span>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <!-- <ion-button
+            class="answer" 
+            shape="round" 
+            Fill="outline"  
+            *ngFor="let item of questionStuff[j].answers" 
+            [ngClass]=" {'active-button': item.id == choice , 'wrong-button': item.isWrong == 1} " 
+            (click)="choose(item) " 
+            [disabled]="isConfirmed" 
+            >{{item.answer}}
+          </ion-button> -->
+          <ion-button
+            class="answer" 
+            shape="round" 
+            Fill="outline"  
+            [disabled]="isConfirmed" 
+            (click) = "btnActivate($event)"
+            (click) = "choosed(getData[j].answer.a)"
+            (click) = "getKey(getData[j].answer, choosedId)"
+            >{{getData[j].answer.a}}
+          </ion-button>
+          <ion-button
+            class="answer" 
+            shape="round" 
+            Fill="outline"  
+            [disabled]="isConfirmed" 
+            (click) = "btnActivate($event)"
+            (click) = "choosed(getData[j].answer.b)"
+            (click) = "getKey(getData[j].answer, choosedId)"
+            >{{getData[j].answer.b}}
+          </ion-button>
+          <ion-button
+            class="answer" 
+            shape="round" 
+            Fill="outline"  
+            (click) = "btnActivate($event)"
+            [disabled]="isConfirmed" 
+            (click) = "choosed(getData[j].answer.c)"
+            (click) = "getKey(getData[j].answer, choosedId)"
+            >{{getData[j].answer.c}}
+          </ion-button>
+          <ion-button
+            class="answer" 
+            shape="round" 
+            Fill="outline"  
+            (click) = "btnActivate($event)"
+            [disabled]="isConfirmed" 
+            (click) = "choosed(getData[j].answer.d)"
+            (click) = "getKey(getData[j].answer, choosedId)"
+            >{{getData[j].answer.d}}
+          </ion-button>
+
+          <ion-button 
+            id="confirm" 
+            class="confirmbtn" 
+            shape="round" 
+            Fill="outline" 
+            [disabled]="choosedId=='' || isConfirmed || heart == 0" 
+            (click) = "btnActivate($event)"
+            (click)="confirm()">
+            Đồng ý
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-row>
+</ion-content>
+
+<!-- || item.isWrong == 2 -->
+
+

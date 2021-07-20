@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border">
+  <div class="back" (click)="back()">
+    <img src="assets/images/back.svg" />
+  </div>
+  <div class="border-header"></div>
+  <p>ĐẶT CHỖ BUFFET</p>
+  <ion-item-group class="booking-buffet">
+    <img src="assets/images/booking-img/buffet.jpg"/>
+  </ion-item-group>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="amount">
+          <ion-label>Số lượng ghế :</ion-label>
+          <ion-input type="number" [(ngModel)]="number" placeholder=""></ion-input>
+        </div>
+        <div class="choosetype">
+          <ion-label>Đề xuất chọn:</ion-label>
+          <ion-select placeholder="Chọn kiểu đặt chỗ" [(ngModel)]="type">
+            <ion-select-option *ngFor="let floor of floors" >{{floor.floor}}</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="date">
+    <ion-col class="year">
+      <ion-label position="floating" >Ngày đến</ion-label>
+      <ion-datetime class="ion-align-items-center" [(ngModel)]="date" displayFormat="DD/MM/YYYY"></ion-datetime>
+      
+    </ion-col>
+    <ion-col class="hours">
+      <ion-label position="floating">Giờ đến</ion-label>
+      <ion-datetime class="ion-align-items-center" [(ngModel)]="time" displayFormat="HH:mm"></ion-datetime>
+    </ion-col>
+  </ion-row>
+  <div class="long">
+    <div class="choosetime">
+      <ion-label>Bạn sẽ ngồi bao lâu?</ion-label>
+      <ion-select placeholder="Chọn thời gian" [(ngModel)]="hourstay">
+        <ion-select-option *ngFor="let time of longtime" [value]="time.time" >{{time.time}}</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+  <div class="action">
+    <ion-button (click)="gotodetail()" [disabled]="check()" id="confirm">Đồng ý</ion-button>
+  </div>
+</ion-content>
+<section class="cart">
+  <strong>{{number === 0? 0 : number}}</strong>
+  <strong>CHỖ ĐÃ ĐẶT</strong>
+  <strong>{{number * 15000 |  currency:'VND':'symbol'}}</strong>
+</section>

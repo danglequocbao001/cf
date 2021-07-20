@@ -1,0 +1,62 @@
+<ion-content>
+    <div class="header-title image">
+        <ion-img class="btn-back" src="assets/images/back.svg" (click)="back()"></ion-img>
+        <ion-avatar class="avatar" (click)="changeAvatar()">
+            <ion-img [src]="image_url" ></ion-img>
+        </ion-avatar>
+    </div>
+    <!-- <form [formGroup]='formGroup' action="">
+        <ion-input formControlName='username'></ion-input>
+        <ion-input formControlName='phone_number'></ion-input>
+        <ion-input formControlName='email'></ion-input>
+    </form> -->
+    <div class="content-custom-user container layout-main">
+        <form action="" [formGroup]='formGroup' >
+            <span class="title">Tên tài khoản</span>
+            <ion-row>
+                <span>
+                    <p>
+                        {{userInfo?.username}}
+                    </p>
+                </span>
+            </ion-row>
+            <span class="title">Tên người dùng</span>
+        <ion-row>
+            <span  *ngIf='!isEditUser'>
+                <p>
+                    {{userInfo?.fullname}}
+                </p>
+                <!-- <img (click)="isEditUser = 'true'" src="assets/images/edit.png" alt=""> -->
+                <ion-icon (click)="isEditUser = 'true'" name="create-outline"></ion-icon>
+            </span>
+            
+            <ion-input *ngIf="isEditUser" formControlName='fullname'></ion-input>
+        </ion-row>
+        <span class="title">Số điện thoại</span>
+        <ion-row>
+            <span *ngIf="!isEditUser">
+                <p>
+                    {{userInfo?.phone_number}}
+                </p>
+                <ion-icon (click)="isEditUser = 'true'" name="create-outline"></ion-icon>
+            </span>
+            <ion-input *ngIf="isEditUser" formControlName='phone_number'></ion-input>
+        </ion-row>
+        <span class="title">Email</span>
+        <ion-row>
+            <span *ngIf="!isEditUser">
+                <p>
+                    {{userInfo?.email}}
+                </p>
+                <ion-icon (click)="isEditUser = 'true'" name="create-outline"></ion-icon>
+            </span>
+            <ion-input *ngIf="isEditUser" formControlName='email'></ion-input>
+        </ion-row>
+        </form>
+    </div>
+    <ion-row class="layout-main">
+        <div class="btn-confirm" *ngIf="isEditUser" (click)="changeUsers()">Đồng ý</div>
+        <div class="btn-confirm" *ngIf="isEditUser" (click)="cancelUpdateUser()">Hủy</div>
+        <h4 *ngIf="!isEditUser" class="change-password" (click)="changePassword()">Thay đổi mật khẩu</h4>
+    </ion-row>
+</ion-content>

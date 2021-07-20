@@ -1,0 +1,107 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" (click)="back()">
+            <ion-img src="assets/images/back.png"></ion-img>
+        </ion-buttons>
+        <ion-title>Đăng Ký</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+<ion-header class="ion-no-border">
+    <ion-img src="assets/images/back.svg" class="back" (click)="back()"></ion-img>
+    <!-- <ion-img src="assets/images/lavashin-logo-white.svg" class="logo"></ion-img> -->
+    <ion-label class="label ion-text-center">ĐĂNG KÝ</ion-label>
+  
+  </ion-header>
+<ion-content>
+    <form [formGroup]="formGroup">
+            <ion-row class="username">
+                <ion-label>Tên Đăng Nhập</ion-label>
+                <ion-input type="text" formControlName="username" placeholder="Nhập tên đăng nhập hoặc số điện thoại...">
+                </ion-input>
+            </ion-row>
+            <ion-row class="phone">
+                <ion-label>Số điện thoại</ion-label>
+                <ion-input type="text" formControlName="phone_number" placeholder="Số điện thoại">
+                </ion-input>
+            </ion-row>
+            <ion-row class="password">
+                <ion-label>Mật khẩu</ion-label>
+                <ion-input type="password" formControlName="password" placeholder="Nhập vào mật khẩu...">
+                </ion-input>
+            </ion-row>
+            <ion-row class="confirmpass">
+                <ion-label>Xác nhận mật khẩu</ion-label>
+                <ion-input type="password" formControlName="password_confirmation" placeholder="Nhập lại mật khẩu...">
+                </ion-input>
+            </ion-row>
+            <ion-row class="email">
+                <ion-label>Email</ion-label>
+                <ion-input type="email" formControlName="email" placeholder="Nhập vào email">
+                </ion-input>
+            </ion-row>
+            <ion-row class="button">
+                <ion-button [disabled]="showSpinner || formGroup.value.username == '' || formGroup.value.email == '' || this.formGroup.value.password == '' || this.formGroup.value.password_confirmation == '' "
+                            (click)="register()">
+                            <ion-spinner *ngIf="showSpinner"></ion-spinner>TIẾP TỤC
+                </ion-button>
+            </ion-row>
+            <ion-row class="noaccount" (click)="haveaccount()">
+                <ion-label>Đã có tài khoản</ion-label>
+            </ion-row>
+    </form>
+</ion-content>
+<!-- <ion-content>
+    <div class="content">
+        <app-head-title [isCheckRegister]='true'></app-head-title>
+        <div class="form-login">
+            <form [formGroup]="formGroup" action="">
+                <ion-row>
+                    <ion-col>
+                        <div class="validator-notnull">
+                            <label class="validator-notnull" for="username">Tên đăng nhập</label>
+                            <ion-input type="text" id="username" formControlName="username"
+                                placeholder="Nhập vào mật khẩu..."></ion-input>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="validator-notnull">
+                            <label for="phone_number">Số điện thoại</label>
+                            <ion-input type="text" id="phone_number" formControlName="phone_number"
+                                placeholder="Nhập tên đăng nhập hoặc số điện thoại..."></ion-input>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="validator-notnull">
+                            <label class="validator-notnull" for="password">Mật khẩu</label>
+                            <ion-input type="password" id="password" formControlName="password"
+                                placeholder="Nhập vào mật khẩu..."></ion-input>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="validator-notnull">
+                            <label class="validator-notnull" for="password_confirmation">Nhắc lại mật khẩu</label>
+                            <ion-input type="password" id="password_confirmation"
+                                formControlName="password_confirmation" placeholder="Nhập vào mật khẩu..."></ion-input>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="validator-notnull">
+                            <label for="email">Email</label>
+                            <ion-input type="text" id="email" formControlName="email"
+                                placeholder="Nhập tên đăng nhập hoặc số điện thoại..."></ion-input>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </form>
+        </div>
+        <div class="footer-login">
+            <div (click)="register()" >
+               <img src="../../assets/images/Group 473.png" alt=""> -->

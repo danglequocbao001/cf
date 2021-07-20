@@ -1,0 +1,17 @@
+ion-content{
+    width: 90%;
+    left: 5%;
+    ion-title{
+        text-align: center;
+        margin-top: 5vw;
+    }
+    ion-row{
+        background-color: #efefef;
+        margin-top: 5vh;
+        margin-bottom: 2vh;
+        border-radius: 15px;
+        ion-input{
+            margin-left: 5vw;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-img src="assets/images/back.svg" class="header--button--back" (click)="back()"></ion-img>
+    <ion-img class="header--logo__green" src="assets/images/lavashin-logo-green.svg"></ion-img>
+    <ion-label class="header--title">Chi tiết đơn hàng</ion-label>
+</ion-header>
+
+<ion-content class="body" *ngIf="data != null">
+  <ion-progress-bar class="body--divider"></ion-progress-bar>
+
+  <ion-item-group class="body--section-1">
+        <ion-img src="assets/images/location-yellow.svg" class="body--section-1--logo"></ion-img>
+        <h2 class="body--section-1--text">Đã giao hàng đến</h2>
+        <h2 class="body--section-1--text__location">{{data.full_address}}</h2>  
+  </ion-item-group>
+  <div>
+    <h2 class="body--section-1--text__date-time">{{data.created_at}}</h2>
+  </div>
+
+  <ion-progress-bar class="body--divider"></ion-progress-bar>
+
+  <ion-item-group class="body--section-2">
+    <h2 class="body--section-2--title">Tóm tắt đơn hàng</h2>
+    <ion-grid lines="none" class="body--section-2--order" *ngFor="let item of data.order_details">
+      <ion-row no-padding no-margin>
+        <ion-col class="body--section-2--order--text" size="6">{{item.product.name}}</ion-col>
+        <ion-col class="body--section-2--order--text">x {{ item.amount }}</ion-col>
+        <ion-col class="body--section-2--order--text">{{item.product.price | currency:'VND':'symbol':'3.0':'vi'}}</ion-col>
+      </ion-row>
+      
+      <ion-row no-padding no-margin *ngFor="let topping of item.topping">
+        <!-- <ion-col class="body--section-2--order--text" size="6">{{topping.name}}</ion-col>
+        <ion-col class="body--section-2--order--text"></ion-col>
+        <ion-col class="body--section-2--order--text">{{topping.price | currency:'VND':'symbol':'3.0':'vi'}}</ion-col> -->
+        <ion-col size="6">{{topping.name}}</ion-col>
+        <ion-col>x {{item.amount}}</ion-col>
+        <ion-col>{{topping.price * item.amount | currency:'VND':'symbol':'3.0':'vi'}}</ion-col>
+      </ion-row>
+      
+    </ion-grid>
+  </ion-item-group>
+
+  <ion-item-group class="body--section-3">
+    <ion-progress-bar class="body--divider"></ion-progress-bar>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="body--section-3--name-list">Thành tiền</ion-col>
+        <ion-col class="body--section-3--price">{{ data.total | currency:'VND':'symbol':'3.0':'vi'}}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="body--section-3--name-list">Phí giao hàng</ion-col>
+        <ion-col class="body--section-3--price">{{data.shipping_cost | currency:'VND':'symbol':'3.0':'vi'}}</ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="body--section-3--name-list__total">TỔNG CỘNG</ion-col>
+        <ion-col class="body--section-3--price__total">{{ data.shipping_cost + data.total | currency:'VND':'symbol':'3.0':'vi'}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+  <!-- <ion-button (click)="deleteOrder()">Hủy giao hàng</ion-button> -->
+  <!-- <ion-button (click)="deleteAllOrder()">Xoa tat ca hoa don pending</ion-button> -->
+</ion-content>

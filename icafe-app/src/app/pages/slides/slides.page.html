@@ -1,0 +1,66 @@
+<ion-content>
+  <div class="pass">
+    <ion-button (click)="passSlide()">Bỏ qua</ion-button>
+  </div>
+  <ion-slides #mySlider>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <img src="../../assets/icon/SVG/Asset 46.svg" alt="">
+        </ion-row>
+        <ion-row>
+          <h2>GIAO HÀNG TẬN NƠI</h2>
+        </ion-row>
+        <ion-row>
+          <span>Đặt món từ xa đơn giản</span>
+        </ion-row>
+        <ion-row>
+          <span>Giao hàng nhanh nhất.</span>
+        </ion-row>
+      </ion-grid>
+      <div class="continue">
+        <ion-button (click)="nextSlide()">Tiếp tục</ion-button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <img src="../../assets/icon/SVG/Asset 47.svg" alt="">
+        </ion-row>
+        <ion-row>
+          <h2>ĐẶT CHỖ NHƯ Ý</h2>
+        </ion-row>
+        <ion-row>
+          <span>Đặt chỗ ưng ý</span>
+        </ion-row>
+        <ion-row>
+          <span>Trước khi tới quán</span>
+        </ion-row>
+      </ion-grid>
+      <div class="continue">
+        <ion-button (click)="nextSlide()">Tiếp tục</ion-button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <img src="../../assets/icon/SVG/Asset 48.svg" alt="">
+        </ion-row>
+        <ion-row>
+          <h2>GAME VUI CÓ THƯỞNG</h2>
+        </ion-row>
+        <ion-row>
+          <span>Chơi game ngay</span>
+        </ion-row>
+        <ion-row>
+          <span>Nhận quà liền tay</span>
+        </ion-row>
+      </ion-grid>
+      <div class="continue">
+        <ion-button (click)="gotoLogin()">Tiếp tục</ion-button>
+      </div>
+    </ion-slide>
+   
+  </ion-slides>
+  
+</ion-content>

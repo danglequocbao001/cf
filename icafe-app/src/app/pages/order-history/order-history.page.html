@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border" (click)="shippingCost()">
+  <ion-img src="assets/images/back.svg" (click)="back()"></ion-img>
+  <ion-title>Lịch sử</ion-title>
+</ion-header>
+
+<ion-toolbar>
+  <ion-segment (ionChange)="segmentChanged($event)" value="booking">
+    <ion-segment-button (click)="changeTabs('foodOrder')" [ngClass]="{'active':Tab==='foodOrder' }" value="ordering">
+      <ion-label>Đặt Hàng</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="changeTabs('booking')" [ngClass]="{'active':Tab==='booking'}" value="booking">
+      <ion-label>Đặt Chỗ</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content>
+  <ion-list *ngIf="Tab == 'foodOrder'">
+    <ion-item *ngFor="let order of arrayHistory" (click)="gotodetail(order.id)">
+      <ion-row>
+        <ion-img src="assets/images/order-history.svg"></ion-img>
+      </ion-row>
+      
+      <div class="title">
+        <ion-label>{{ order.list_product }}</ion-label>
+        <!-- <ion-label>{{ order.id }}</ion-label> -->
+        <div class="subtitle">
+          <span>Mã số :  {{ order.id }}  |  </span>
+          <span *ngIf="order.status == 'delivery_failed'"> Đơn hàng đã hủy </span>
+          <span *ngIf="order.status == 'confirmed'"> Đã xác nhận </span>
+          <span *ngIf="order.status == 'delivery_successed'">Đặt hàng thành công</span>
+          <br>
+          <span>{{ order.amount_product + " món" }} - </span>
+          <span>{{ order.order_created_at }}</span>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="Tab == 'booking'">
+    <ion-item *ngFor="let order of arrayHistory">
+      <ion-row>
+        <ion-img src="assets/images/order-history.svg"></ion-img>
+      </ion-row>
+      
+      <div class="title">
+        <ion-label>{{ order.service_type.value }}</ion-label>
+        <div class="subtitle">
+          <span>{{ order.amount + " Ghế" }} - </span>
+          <span>{{ order.service_type.created_at}}</span>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

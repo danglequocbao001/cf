@@ -1,0 +1,23 @@
+.icon{
+    font-size: 60px;
+    color: #d84c3a;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+
+    transition-timing-function: ease-in-out;
+    animation-name: icon-animate;
+    animation: icon-animate 1s infinite;
+}
+.map{
+    animation: none;
+    position: absolute;
+    z-index: -1;
+    transform: scaleY(0.8);
+}
+@keyframes icon-animate{
+    0% { transform: translateY(40%)};
+    50% { transform: translateY(0%)};
+    100% { transform: translateY(40%)};
+}

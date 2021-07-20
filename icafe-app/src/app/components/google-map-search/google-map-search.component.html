@@ -1,0 +1,10 @@
+<ion-content>
+  <ion-title>GIAO HÀNG ĐẾN</ion-title>
+  <ion-row>
+    <ion-input (ionChange)="checkLocation()" [(ngModel)]="searchInput" placeholder="nhập địa chỉ"></ion-input>
+  </ion-row>
+  <ion-list *ngIf="searchInput.length > 0 && geoRes" class="return-loc">
+    <ion-item *ngFor="let loc of geoRes; let i = index" (click)="selectLocation(i)">{{loc.formatted_address}}</ion-item>
+  </ion-list>
+  <div #map id="map" style="width: 100%; height: 100%; border-top-left-radius: 15px; border-top-right-radius: 15px;"></div>
+</ion-content>

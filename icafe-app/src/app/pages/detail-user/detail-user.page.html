@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+    <div class="back">
+        <img src="assets/images/back.svg" (click)="back()" />
+    </div>
+</ion-header>
+<ion-content>
+    <div slot="fixed" class="content-custom-user container layout-main">
+        <ion-row class="detail-user">
+            <img  onerror="this.src='../../assets/images/user-info-green.svg';"  [src]="image_url" class="avatar">
+            <ion-text class="name">{{userInfo.fullname}}</ion-text>
+        </ion-row>
+        <ion-row (click)="openReward()">
+            <ion-icon name="star-half-outline"></ion-icon>
+            <ion-label>Điểm thưởng</ion-label>
+        </ion-row>
+        <ion-row (click)="openPage()">
+            <ion-icon name="create-outline"></ion-icon>
+            <ion-label>Chỉnh sửa tài khoản</ion-label>
+        </ion-row>
+        <ion-row (click)="oderHistory()">
+            <ion-icon name="list-circle-outline"></ion-icon>
+            <ion-label>Lịch sử mua hàng</ion-label>
+        </ion-row>
+        <ion-row (click)="paymentMethod()">
+            <ion-icon name="wallet-outline"></ion-icon>
+            <ion-label>Hình thức thanh toán</ion-label>
+        </ion-row>
+        <ion-row>
+            <ion-icon name="help-circle-outline"></ion-icon>
+            <ion-label>Trợ giúp</ion-label>
+        </ion-row>
+        <ion-row>
+            <ion-icon name="settings-outline"></ion-icon>
+            <ion-label>Cài đặt</ion-label>
+        </ion-row>
+        <ion-row (click)="logout()">
+            <ion-icon name="log-out-outline"></ion-icon>
+            <ion-label>Đăng xuất</ion-label>
+        </ion-row>
+    </div>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header class="ion-no-border">
+  <div class="back" (click)="back()" >
+    <img src="assets/images/back.svg"/>
+  </div>
+  <div class="border-header"></div>
+    <p>ĐẶT GÓI TIỆC + COMBO</p>
+    <ion-item-group class="ion-no-border" class="ion-no-padding" class="booking-coffee">
+      <img src="assets/images/booking-img/combo.jpg"/>
+    </ion-item-group>
+  </ion-header>
+  
+<ion-content fullscreen>
+      <section>
+      <ion-button (click)="gotoDetail(combo)" *ngFor="let combo of combos">
+        <ion-img src="assets/icon/Asset 65.svg"></ion-img>
+        <div class="info">
+          <p>{{combo.combo}}</p>
+          <p>{{combo.capacity}}</p>
+        </div>
+      </ion-button>
+      </section>
+</ion-content>

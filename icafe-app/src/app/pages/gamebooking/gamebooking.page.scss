@@ -1,0 +1,192 @@
+ion-header {
+    margin-bottom: 28vh;
+    .back{
+        background-color: #64C18E;
+        margin-top: -2px;
+        img{
+            padding: 6px;   
+            width: 60px;
+            display: flex;
+            margin-top: 1px;
+            margin-left: 10px;
+            padding-top: 20px;
+        }
+    }
+    .border-header {
+      position: fixed;
+      width: 100vw;
+      background-color: #64C18E;
+      border-radius: 0px 0px 35px 35px;
+      /*smartphone*/
+      @media screen and (max-width: 768px){
+        height: 150px;
+      }
+      /*tablet nhỏ*/
+      @media screen and (min-width: 768px){
+        height: 220px;
+      }
+      /*Tablet lớn*/
+      @media screen and (min-width: 1024px){
+        height: 280px;
+      }
+      .back{
+          img{
+            width: 36px;
+            margin: 17px 9px;
+          }
+      }
+    }
+      p {
+        color: #FFFFFF;
+        font: Bold 23px/70px Montserr at;
+        z-index: 21;
+        position: inherit;
+        text-align: center;
+        font-size: 30px;
+      }
+      ion-img {
+        z-index: 10;
+        width: 165px;
+        margin: -20px auto 0px auto;
+        position: inherit;
+      }
+      .booking-coffee{
+        width: 80vw;
+        left: 10%;
+        position: absolute;
+        display: flex;
+        img{
+            border-radius: 30px;
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+          }
+        }
+  }
+
+ion-content{
+    left: 5%;
+    width: 90%;
+    ion-grid{
+        ion-row{
+            
+            margin-bottom: -20px;
+            margin-top: 30px;
+            ion-col{
+                display: flex;
+                justify-content: space-between;
+                .choosetype{
+                    ion-select{
+                        width: 55vw;
+                        height: 37px;
+                        border: 0.25px solid #404040;
+                        opacity: 1;
+                        border-radius: 6px;
+                        margin-top: 10px;
+                        --padding-start: 0;
+                    }
+                }
+                .amount{
+                    margin-right: 5vw;
+                    width: 25vw;
+                    ion-text{
+                        text-align: left;
+                    }
+                    ion-input{
+                        margin-top: 10px;
+                        border: 0.25px solid #404040;
+                        height: 37px;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+    }
+    .date{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        ion-item{
+            ion-label{
+                font-size: 20px;
+            }
+        }
+        .year{
+           
+            ion-datetime{
+                margin-top: 10px;
+                width: 55vw;
+                height: 37px;
+                border: 0.25px solid #404040;
+                opacity: 1;
+                border-radius: 6px;
+                --padding-start: 0;
+                text-justify: center;
+            }
+        }
+        .hours{
+            margin-left: 5vw;
+            width: 25vw;
+            padding-left: 0;
+            
+            ion-label{
+                justify-content: end;
+            }
+            ion-datetime{
+                margin-top: 10px;
+                border: 0.25px solid #404040;
+                height: 37px;
+                border-radius: 6px;
+                opacity: 1;
+                text-align: left;
+                --padding-start: 0;
+                
+            }
+        }
+    }
+    .long{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        ion-item{
+            --inner-border-width: 0px;
+        }
+        .choosetime{
+            // ion-label{
+            //     // margin-left: 10px;
+            // }
+            ion-select{
+                // margin-left: 10px;
+                width: 200px;
+                height: 37px;
+                border: 0.25px solid #404040;
+                opacity: 1;
+                border-radius: 6px;
+                margin-top: 10px;
+                --padding-start: 0;
+                
+            }
+        }
+    }
+    .action{
+        margin: auto 15px;
+        ion-button{
+            width: 100%;
+            --background:#5EB57A;
+        }
+    }
+}
+
+.cart{
+    width: 100%;
+    height: 55px;
+    background-color: #F47F62;
+    bottom: 0;
+    color: #fff;
+    border-radius: 12px 12px 0px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+}

@@ -1,0 +1,108 @@
+// HEADER
+
+.header-title{
+    height: 135px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    .title{
+        margin: 0;
+        color: #FFFFFF;
+        font-size: 28px;
+    }
+    .btn-back{
+        width: 50px;
+        margin-top: -80px;
+        margin-left: -290px;
+    }
+    ion-label {
+        margin-top: -20px;
+    }
+    span{
+        font-size: 26px;
+        color: white;
+    }
+}
+
+    .avatar{
+        width: 115px;
+        height: 115px;
+        border-radius: 50%;
+        position: absolute;
+        top: 85px;
+        background-color: white;
+        img{
+            width: 99px;
+            padding: 9px;
+        }
+    }
+
+    .image{
+        background-size: cover;
+        background-color: #64C18E;
+        border-radius: 0 0 25px 25px;
+        height: 148px;
+    }
+
+    // .image-login{
+    //     background-size: cover;
+    //     background-image: url('../../../assets/images/Asset 8@4x.png') !important;
+    // }
+
+    // .image-register{
+    //     background-size: cover;
+    //     background-image: url('../../../assets/images/Asset 12@4x.png');
+    // }
+
+    // .image-main-menu{
+    //     background-position: center; /* Center the image */
+    //     background-repeat: no-repeat; /* Do not repeat the image */
+    //     background-size: cover;
+    //     background-image: url('../../../assets/images/Asset 16@4x.png');
+    // }
+
+
+//
+.content-custom-user {
+    margin-top: 100px;
+    .title {
+        color: #8ad4e4;
+        font-size: 17px;
+        padding-top: 15px;
+    }
+    ion-row {
+        border-bottom: 1px solid #787878;
+        padding-top: 15px;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        span {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        img {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}
+
+.change-password {
+    width: 100%;
+    margin-top: 40px;
+    text-align: right;
+}
+
+.btn-confirm{
+    background-color: #8AD4E4;
+    color: #FFFFFF;
+    padding: 2px 30px;
+    border: 0.5px;
+    border-radius: 15px;
+    margin-right: 20px;
+}

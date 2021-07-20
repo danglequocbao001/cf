@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-img src="assets/images/back.svg" class="back" (click)="back()"></ion-img>
+  <ion-label class="label ion-text-center">HÌNH THỨC THANH TOÁN</ion-label>
+
+</ion-header>
+
+<ion-content>
+  <!-- <ion-label class="let-choose">Hãy chọn hình thức thanh toán của bạn: </ion-label> -->
+  <ion-item class="choose" lines="none" (click)="byMoMo()" (click)="changePaymentData()">
+    <ion-text>Thanh toán qua momo</ion-text>
+    <ion-img src="assets/icon/downarrow.jpeg"></ion-img>
+  </ion-item>
+  <ion-item class="choose" lines="none" (click)="byCash()" (click)="changePaymentData()">
+    <ion-text>Thanh toán bằng tiền mặt</ion-text>
+    <ion-img src="assets/images/payment-method.svg"></ion-img>
+  </ion-item>
+  <!-- <ion-item class="pay-by" lines="none">
+    
+  </ion-item> -->
+  <ion-row>
+    <ion-text class="pay-by">Hình thức thanh toán hiện tại: {{checkPayment}}</ion-text>
+  </ion-row>
+</ion-content>

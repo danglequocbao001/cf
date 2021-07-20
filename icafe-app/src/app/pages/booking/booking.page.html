@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <div class="back" (click)="back()">
+    <img src="assets/images/back.svg" />
+  </div>
+  <div class="border-header"></div>
+  <p>ĐẶT CHỖ TRƯỚC</p>
+  <ion-img src="assets/images/Asset 55.svg"></ion-img>
+</ion-header>
+
+<ion-content fullscreen>
+  <section>
+    <div class="top common" >
+      <div class="button" (click)="goToCoffee()">
+        <ion-img src="assets/images/coffee.svg"></ion-img>
+        <p>COFFEE</p>
+      </div>
+      <div class="button" (click)="goToGame()">
+        <ion-img src="assets/images/game.png"></ion-img>
+        <p>GAME</p>
+      </div>
+    </div>
+    <div class="bottom common">
+      <div class="button" (click)="goToBuffet()">
+        <ion-img src="assets/images/buffet.png"></ion-img>
+        <p>BUFFET LẨU NƯỚNG</p>
+      </div>
+      <div class="button" (click)="gotoCombo()">
+        <ion-img src="assets/images/combo.svg"></ion-img>
+        <p>GÓI TIỆC VÀ COMBO</p>
+      </div>
+    </div>
+  </section>
+</ion-content>

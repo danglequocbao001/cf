@@ -1,0 +1,38 @@
+ion-header{
+    background-color: #64C18E;
+    border-radius: 0 0 30px 30px;
+    ion-img{
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        width: 50px;
+    }
+    p{
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        color: white;
+        font-size: 30px;
+        font-weight: 700;
+    }
+}
+
+ion-content{
+    ion-grid{
+        margin-top: 30px;
+        ion-row{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 100px;
+            }
+            span{
+                margin-top: 15px;
+                font-size: 20px;
+            }
+        }
+        .zalopay{
+            margin-top: 20px;
+        }
+    }
+}

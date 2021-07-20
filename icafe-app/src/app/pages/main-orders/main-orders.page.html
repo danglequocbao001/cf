@@ -1,0 +1,27 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+      <ion-buttons slot="start" (click)="back()">
+          <ion-img src="assets/images/back.png"></ion-img>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row class="icons">
+      <ion-img class="icon" src="assets/images/Asset 49.svg"></ion-img>
+      <ion-label>Thích gì nào?</ion-label>
+    </ion-row>
+    <ion-row class="choose common">
+      <span>Đồ Uống</span>
+      <div class="images" (click)="getProduct('drink')">
+        <ion-img src="assets/images/drink.png"></ion-img>
+      </div>
+    </ion-row>
+    <ion-row class="food common">
+      <span>Đồ Ăn</span>
+      <div class="images" (click)="getProduct('food')">
+        <ion-img src="assets/images/meal.png"></ion-img>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

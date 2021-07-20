@@ -1,0 +1,23 @@
+<ion-header [translucent]="true" class="ion-padding" class="ion-no-border">
+  <ion-item lines="none">
+    <ion-buttons class="backbtn" slot="start" (click)="back()">
+      <ion-img src="assets/images/back.png"></ion-img>
+    </ion-buttons>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="rule">LUẬT CHƠI</ion-label>
+  </ion-item>
+</ion-header>
+<ion-content class="ion-padding" class="rule-wrapper">
+  <ion-list>
+    <ion-label class="inside-rule">Người chơi có 5 lượt/ ngày, trong đó:</ion-label>
+    <ion-label>+ Hai lượt miễn phí.</ion-label>
+    <ion-label>+ Ba lượt mua bằng điểm tích lũy trong lượt chơi, khi hết mạng hoặc hết giờ người chơi sẽ bị game over (mất lượt và điểm thưởng).</ion-label>
+    <ion-label class="inside-rule">Điều kiện thắng:</ion-label>
+    <ion-label>+ 1 lượt chơi có 10 câu hỏi, trả lời được 10/10 câu một lượt sẽ thắng (8/10 câu đối với mức độ trung bình và khó).</ion-label>
+    <ion-label>+ Khi người chơi trả lời đúng liên tiếp 2 câu trở lên sẽ được cộng điểm thưởng (điểm thưởng tính theo cấp số cộng ).</ion-label>
+    <ion-label>+ Khi người chơi trả lời sai sẽ bị mất hết điểm thưởng, sai 3 câu người chơi sẽ bị game over (1 câu đối với phần chủ đề và mức độ dễ).</ion-label>
+  </ion-list>
+</ion-content>
+
+

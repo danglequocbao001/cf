@@ -1,0 +1,24 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-item lines="none">
+    <ion-img class="backbtn" (click)="back()" src="assets/images/back.png"></ion-img>
+    <ion-text>ĐỐ VUI NHẬN THƯỞNG</ion-text>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <ion-img class="main-img" src="../../assets/icon/SVG/Asset 48.svg"></ion-img>
+  <ion-text>Điểm tích lũy: {{ checkTotalScore }}</ion-text>
+  <br/>
+  <ion-text>Lượt chơi: {{ totalTurn }}</ion-text>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button Fill="round" (click)="playByTopic()">Chơi theo chủ đề</ion-button>
+        <ion-button Fill="round" (click)="playByLevel()">Chơi theo cấp độ</ion-button>
+        <ion-button Fill="round" (click)="buyMoreTurn()">Mua thêm lượt chơi</ion-button>
+        <ion-button Fill="round" (click)="rule()">Luật chơi</ion-button>
+        <ion-button Fill="round" (click)="back()">Thoát</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

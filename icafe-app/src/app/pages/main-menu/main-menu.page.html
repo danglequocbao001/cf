@@ -1,0 +1,48 @@
+<!-- <app-head-title [isMainMenu]='true'></app-head-title> -->
+<ion-header class="ion-no-border">
+    <ion-img src="assets/images/lavashin-logo-white.svg" class="logo"></ion-img>
+    <ion-img src="assets/images/user-info.svg" class="user-info" (click)="detailUser()"></ion-img>    
+      <ion-slides class="slides" >
+        <ion-slide class="slide" *ngFor="let slideData of getSlideData">
+            <img class="slide-img" onerror="this.src='../../assets/images/onerror.png';"  src="{{slideData.image}}" alt="" (click)="promotion()">
+        </ion-slide>
+    </ion-slides>
+    
+</ion-header>
+
+<ion-content>
+    <ion-grid >
+        <ion-row class="menu">
+            <div>
+                <div (click)="menuProduct()" class="icon">
+                    <img src="../../assets/icon/SVG/Asset 46.svg" alt="">
+                </div>
+                <p>Giao hàng</p>
+            </div>
+            <!-- <div>
+                <div class="icon" (click)="booking()">
+                     <img src="../../assets/icon/SVG/Asset 47.svg" alt="">
+                </div>
+                <p>Đặt chỗ</p>
+            </div> -->
+            <div>
+                <div class="icon" (click)="questionare()" > 
+                    <img src="../../assets/icon/SVG/Asset 48.svg" alt="">
+                </div>
+                <p>Đố vui</p>
+            </div>
+            <div>
+                <div class="icon" (click)="news()">
+                    <img src="../../assets/images/Asset 49.png" alt="">
+                </div>
+                <p>Tin tức</p>
+            </div>
+        </ion-row>
+        <ion-row class="row layout-main" *ngFor="let promotion of getData" (click)="goToPromotion(promotion)" >
+            <div class="col-12 product" >
+                <img class="img" onerror="this.src='../../assets/images/onerror.png';"  src="{{promotion.av_image}}" alt="">
+            </div>
+            <span class="content-product">{{promotion.title}}</span>
+        </ion-row>
+    </ion-grid>
+</ion-content>

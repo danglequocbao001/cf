@@ -1,0 +1,16 @@
+<ion-header class="ion-no-border">
+  <ion-img src="assets/images/back.svg" class="back" line="none" (click)="back()"></ion-img>
+</ion-header>
+
+<ion-content *ngIf="getData != null" >
+  <img class="img" src="{{getData.promotion.av_image}}">
+  <ion-text class="title">{{getData.promotion.title}}</ion-text>
+  <br>
+  <ion-text >Tên mã: {{getData.promotion.name}}</ion-text>
+  <br>
+  <ion-text >CODE: {{getData.promotion.code}}</ion-text>
+  <br>
+  <ion-text >Số lượng: {{getData.promotion.amount}}</ion-text>
+  <br>
+  <ion-text class="content" [innerHTML]="getData.promotion.description"></ion-text>
+</ion-content>

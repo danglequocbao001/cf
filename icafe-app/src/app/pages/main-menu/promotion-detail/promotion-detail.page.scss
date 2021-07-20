@@ -1,0 +1,30 @@
+ion-header{
+    .back{
+        width: 50px;
+        margin-top: 25px;
+        margin-left: 20px;
+    }
+}
+ion-content{
+    width: 90%;
+    left: 5%;
+    .img{
+        border-radius: 30px;
+        height: 40vh;
+        object-fit: cover;
+        margin-top: 30px;
+    }
+    .title{
+        margin-top: 20px;
+        font-size: 25px;
+        font-weight: 700;
+        color: #8b8b8b;
+        display: block;
+        text-align: center;
+    }
+    .content{
+        font-size: 15px;
+        color: #8b8b8b;
+        text-align: left;
+    }
+}

@@ -1,0 +1,31 @@
+<section class="detail-count" *ngIf="product">
+  <p class="btn-close"><i (click)="dismiss()" class="fa fa-times" aria-hidden="true"></i></p>
+  <div class="content">
+    <div class="img"><img [src]="product.product_image" /></div>
+    <span>
+      <p><strong>{{product.name}}</strong></p>
+    </span>
+  </div>
+  <div class="group-btn-count">
+    <div>
+      <img class="btn-subtract" src="assets/icon/subtract.svg" (click)="minus()"/>
+      <strong class="total">{{updatevalue}}</strong>
+      <!-- <span class="btn-plus" (click)="add()" >+</span> -->
+      <img class="btn-plus" src="assets/icon/plus.svg" (click)="add()"/>
+    </div>
+    <strong class="price">{{updatePrice | currency:'VND':'symbol':'3.0':'vi'}}</strong>
+  </div>
+  
+  <div class="topping" *ngIf="arrayToppings">
+    <label>Topping</label>
+    <ion-select multiple placeholder="Thêm Topping" [(ngModel)]="selectedTopping" (ngModelChange)="updateTopping()">
+      <ion-select-option *ngFor="let topping of product.toppings" [value]="topping.id">
+        <p>{{topping.name}}</p>
+      </ion-select-option>
+    </ion-select>
+  </div>
+  
+  <div class="btn-add" >
+    <strong (click)="confirm()" >CẬP NHẬT</strong>
+  </div>
+</section>

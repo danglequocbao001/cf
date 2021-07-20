@@ -1,0 +1,24 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-item lines="none">
+    <ion-buttons class="backbtn" slot="start" (click)="back()">
+      <ion-img src="assets/images/back.png"></ion-img>
+    </ion-buttons>
+  </ion-item> 
+</ion-header>
+
+<ion-content *ngIf="getData.length != 0" >
+  <ion-label class="main-title">CHƠI THEO CẤP ĐỘ</ion-label>
+  <ion-label *ngIf="totalTurn <= 0" class="over-turn" (click)="back()">Bạn đã hết lượt chơi, hãy mua thêm!</ion-label>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button [disabled] = "totalTurn <= 0"
+                    (click)="chooseLevel(item)"
+                    *ngFor="let item of getData | keyvalue"
+                    Fill="round">
+          {{item.value}}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,105 @@
+.detail-count {
+    margin: 0 12px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.btn-close {
+    text-align: right;
+    font-size: 20px;
+    margin: 0;
+    i {
+        color: #d6d6d6;
+    }
+}
+
+.content {
+    display: flex;
+    p {
+        margin: 0;
+    }
+    .img {
+        width: 75px;
+        height: 75px;
+        background-color: #fff7bf;
+        border: 0.5px;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+}
+
+.group-btn-count {
+    display: flex;
+    justify-content: space-between;
+    .count{
+        width: 100%;
+    }
+    .price {
+        display: flex;
+        text-align: center;
+        background-color: #aeaeae;
+        color: #fff;
+        padding: 2px 20px;
+        border: 0.5px;
+        border-radius: 5px;
+    }
+}
+
+.btn-add {
+    text-align: center;
+    strong {
+        background-color: #f0684d;
+        color: #fff;
+        padding: 5px 25px;
+        border: 0.5px;
+        border-radius: 15px;
+    }
+}
+
+.btn-plus {
+    width: 40px;
+    height: 40px;
+    padding: 10px 10px 10px 10px;
+    background-color: #f0684d;
+    border: 0.5px;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.btn-subtract {
+    width: 40px;
+    height: 40px;
+    padding: 10px 10px 10px 10px;
+    background-color: #f0684d;
+    border: 0.5px;
+    border-radius: 50%;
+}
+
+.total{
+    margin: 0 12px;
+}
+.topping{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    label{
+        font-size: 20px;
+        color: #000000;
+        font-weight: 500;
+        justify-content: center;
+        align-content: center;
+    }
+    select{
+        background-color: #64c18e;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        padding: 5px 30px 5px 30px;
+        border-radius: 10px;
+        border: none;
+    }
+}

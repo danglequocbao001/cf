@@ -1,0 +1,10 @@
+<ion-header class="ion-no-border">
+  <ion-img src="assets/images/back.svg" class="back" line="none" (click)="back()"></ion-img>
+</ion-header>
+
+<ion-content>
+  <img class="img" src="{{getData.thumbnail}}">
+  <ion-text class="title">{{getData.title}}</ion-text>
+  <br>
+  <ion-text class="content" [innerHTML]="getData.content"></ion-text>
+</ion-content>

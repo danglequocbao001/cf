@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+  <div class="back" (click)="back()" >
+    <img src="assets/images/back.svg"/>
+  </div>
+  <div class="border-header"></div>
+    <p>CHI TIẾT</p>
+    <ion-img  src="assets/images/Asset 55.svg"></ion-img>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    <ion-label>{{detaiBooking.combo}}</ion-label>
+    <p>{{detaiBooking.capacity}}</p>
+    <p>Giá: {{detaiBooking.price}}</p>
+  </div>
+  <div class="content">
+    <ion-label>BAO GỒM:</ion-label>
+    <p>1. Trang trí phòng tiệc</p>
+    <ion-label>Điều kiện</ion-label>
+    <p>- Không áp dụng đồng thời chương trình khuyến mãi khác.</p>
+  </div>
+  <div class="action">
+    <ion-button (click)="accept()">Chọn</ion-button>
+  </div>
+</ion-content>

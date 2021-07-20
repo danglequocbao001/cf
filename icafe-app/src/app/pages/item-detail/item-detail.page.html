@@ -1,0 +1,189 @@
+<ion-header class="ion-no-border">
+  <ion-row>
+    <ion-button (click)="back()">
+      <ion-img src="assets/images/back.svg"></ion-img>
+    </ion-button>
+    <ion-title>ĐƠN HÀNG CỦA BẠN</ion-title>
+  </ion-row>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="location">
+    <ion-row class="location--title">
+      Giao hàng đến
+    </ion-row>
+    <ion-row>
+      <ion-col class="location--deliver" size="9">{{ dataOrder.full_address }}</ion-col>
+      <ion-col class="location--adjustment" (click)="popupGoogleMap()">Chỉnh sửa</ion-col>
+    </ion-row>
+    <ion-row class="location--add-detail" (click)="addDetail()">
+      <p *ngIf="!isAddDetailLocation">+ Thêm chi tiết tòa nhà, số tầng, ...</p>
+      <ion-input [(ngModel)]="detailLocation" *ngIf="isAddDetailLocation" class="ion-no-padding location-add-detail" placeholder="Nhập mô tả..."></ion-input>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid class="phone-number">
+    <ion-row class="phone-number--title">Ghi chú giao hàng</ion-row>
+    <ion-row class="phone-number--title-sub">Số điện thoại</ion-row>
+    <ion-row>
+      <ion-col size="9">
+        <ion-text *ngIf="!isEditUser" class="phone-number--number">
+          {{dataAccount.phone_number}}
+        </ion-text>
+        <ion-input [(ngModel)]="phoneNumberReciver" *ngIf="isEditUser" class="ion-no-padding phone-number--number__edited" type="number" placeholder="Nhập số điện thoại"></ion-input>
+      </ion-col>
+      <ion-col class="phone-number--button" (click)="editPhoneNumber()">chỉnh sửa</ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid class="order" style="margin-bottom: 5vh;">
+    <ion-row class="order--title">
+      <ion-col size="9" class="order--title--text">Tóm tắt đơn hàng</ion-col>
+      <ion-col class="order--title--addmore" (click)="addMore()">Thêm món</ion-col>
+    </ion-row>
+    
+    <ion-row *ngFor="let item of dataItem; let i = index" class="order--list">
+      <ion-col class="order--list--amount" size="2">
+        <div>{{item.amount}}X</div>
+      </ion-col>
+      <ion-col class="order--list--detail">
+        <ion-row>
+          <ion-col size="8" class="ion-no-margin ion-no-padding order--list--detail--name" (click) = "popupModalChange(i)">{{ item.name }}</ion-col>
+          <ion-col class="ion-no-margin ion-no-padding order--list--detail--price">{{ item.total_price | currency:'VND':'symbol':'3.0':'vi' }}</ion-col>
+          <ion-img class="ion-no-margin" style="width: 20px; height: 20px;" src="assets/icon/x-icon.svg" (click)="deleteOrder(i)"></ion-img>
+        </ion-row>
+        <ion-row class="ion-no-padding order--list--detail--topping">
+          <span *ngFor="let topping of item.topping_obj">{{topping.name}}, </span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid class="price">
+    <ion-row>
+      <ion-col size="8" class="price--text">Tạm tính</ion-col>
+      <ion-col class="price--value">{{tempTotalPrice | currency:'VND':'symbol':'3.0':'vi'}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8" class="price--text">Phí giao hàng: {{ dataOrder.distance }}km</ion-col>
+      <ion-col class="price--value">{{ dataOrder.shipCost | currency:'VND':'symbol':'3.0':'vi' }}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8" class="price--text">Khuyến mãi</ion-col>
+      <ion-col class="price--value"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center promo">
+      <ion-text class="promo--text">Mã Khuyến mãi</ion-text>
+      <ion-input class="promo--input"></ion-input>
+    </ion-row>
+    <ion-row class="payment-method">
+      <ion-col size="6">
+        <ion-row>
+          <ion-img style="width: 20px; height: auto;" src="assets/icon/dollar.svg"></ion-img>
+          <ion-select [(ngModel)]="paymentType" placeholder="MoMo">
+            <ion-select-option *ngFor="let type of types">{{type.name}}</ion-select-option>
+          </ion-select>
+          <!-- <ion-text (click)="dynChangePaymentMethod()">{{ paymentType }}</ion-text> -->
+        </ion-row>
+        <ion-row class="total-price">
+          {{ totalPrice | currency:'VND':'symbol':'3.0':'vi' }}
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-button [disabled]="productPrice == 0" (click)="checkOrderPaymentAndOrder()" class="button">Đặt hàng</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
+
+<!-- <ion-header class="ion-no-border">
+    <img class="back" src="assets/images/back.svg" (click)="back()" />
+    <ion-title>ĐƠN HÀNG CỦA BẠN</ion-title>
+</ion-header>
+
+<div class="location">
+  <ion-row class="location--title">
+    Giao hàng đến
+  </ion-row>
+  <ion-row>
+    <ion-col class="location--deliver" size="9">{{ dataOrder.full_address }}</ion-col>
+    <ion-col class="location--adjustment" (click)="popupGoogleMap()">Chỉnh sửa</ion-col>
+  </ion-row>
+  <ion-row class="location--add-detail" (click)="addDetail()">
+    <p *ngIf="!isAddDetailLocation">+ Thêm chi tiết tòa nhà, số tầng, ...</p>
+    <ion-input [(ngModel)]="detailLocation" *ngIf="isAddDetailLocation" class="location-add-detail" placeholder="Nhập mô tả..."></ion-input>
+  </ion-row>
+</div>
+<ion-content>
+  <p class="note">Ghi chú đơn hàng</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p>Số điện thoại</p>
+        <p *ngIf="dataAccount && !isEditUser">{{dataAccount.phone_number}}</p>
+        <ion-input [(ngModel)]="phoneNumberReciver" *ngIf="isEditUser" class="editPhoneNumber" type="number" placeholder="Nhập số điện thoại"></ion-input>
+      </ion-col>
+      <ion-col>
+        <p></p>
+        <p class="change" (click)="editPhoneNumber()">Chỉnh sửa</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="order">
+      <span class="brief">Tóm tắt đơn hàng</span>
+      <span class="add" (click)="addMore()">Thêm món</span>
+    </ion-row>
+    <ion-row *ngFor="let item of dataItem; let i = index" class="order-item" >
+      <ion-col size="8" class="food">
+        <span size="5" class="amount">{{item.amount}}X</span>
+        <ion-col size="10">
+          <span class="food">{{item.name}}</span>
+          <ion-row class="topping">
+            <span *ngFor="let topping of item.topping_obj">{{topping.name}}, </span>
+          </ion-row>
+        </ion-col>
+        <ion-col>
+          <p>{{item.total_price | currency:'VND':'symbol':'3.0':'vi'}}</p>
+        </ion-col>
+      </ion-col>
+      <span class="amount-order-item" *ngIf="item.amount > 0">{{item.amount * item.price + item.topping-price | currency:'VND':'symbol':'3.0':'vi'}}</span>
+      <ion-icon *ngIf="item.amount > 0" (click) = "popupModalChange(i)" name="create-outline"></ion-icon>
+    </ion-row>
+
+    <ion-row class="note">
+      <textarea placeholder="Ghi chú cho món ăn..." [(ngModel)]="dataOrder.note"></textarea>
+    </ion-row>
+    <ion-row class="price">
+      <ion-col>
+        <p>Phí giao hàng: {{ dataOrder.distance }}km</p>
+        <p>Phí đơn hàng:</p>
+        <p>TẠM TÍNH</p>
+      </ion-col>
+      <ion-col class="cost">
+        <span>{{dataOrder.shipCost | currency:'VND':'symbol':'3.0':'vi'}}</span>
+        <span class="product-temp">{{productPrice | currency:'VND':'symbol':'3.0':'vi'}}</span>
+        <span class="cost-temp">{{tempTotalPrice | currency:'VND':'symbol':'3.0':'vi'}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="promotion">
+      <input [(ngModel)]="code" placeholder="Nhập mã khuyến mãi..."/>
+      <button (click)="applyPromotion()">Đồng ý</button>
+    </ion-row>
+    <ion-row>
+    </ion-row>
+    <ion-row class="payment-method">
+      <ion-label>Hình thức thanh toán:</ion-label>
+      <ion-button shape="round" Fill="outline" class="pay-by" (click)="dynChangePaymentMethod()">{{paymentType}}</ion-button>
+    </ion-row>
+    <ion-row class="pay">
+      <span>THANH TOÁN</span>
+      <span>{{totalPrice | currency:'VND':'symbol':'3.0':'vi'}}</span>
+    </ion-row>
+    <ion-row class="submit">
+      <ion-button shape="round" [disabled]="productPrice == 0" (click)="checkOrderPaymentAndOrder()" >ĐẶT HÀNG</ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->

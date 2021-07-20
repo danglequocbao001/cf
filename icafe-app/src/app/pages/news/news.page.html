@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-img src="assets/images/back.svg" class="back" (click)="back()"></ion-img>
+  <ion-label class="title ion-text-center">TIN TỨC</ion-label>
+   
+  <ion-app class="news-view">
+    <ion-slides class="slides" >
+        <ion-slide class="slide" (click)="detail(new)" *ngFor="let new of getData">
+            <ion-img class="slide-img"   src="{{new.thumbnail}}" alt=""></ion-img>
+        </ion-slide>
+    </ion-slides>
+  </ion-app>
+</ion-header>
+
+<ion-content >
+  <ion-grid class="news">
+    <ion-row *ngFor="let new of getData" (click)="detail(new)" >
+      <ion-col class="img-cover" size="4">
+        <ion-card>
+          <ion-img class="news-img" [alt]="alt" src="{{new.thumbnail}}"></ion-img>
+        </ion-card>
+      </ion-col>
+      <ion-col size="8">
+        <ion-label class="title" >{{new.title}}<br></ion-label>
+        <ion-label class="content" [innerHTML]="new.content"></ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

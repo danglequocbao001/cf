@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <div class="back">
+    <img src="assets/images/back.png" (click)="back()" />
+  </div>
+    <ion-title>ĐƠN HÀNG ĐẶT CHỖ</ion-title>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p>Số điện thoại</p>
+        <p *ngIf="dataAccount">{{dataAccount.phone_number}}</p>
+      </ion-col>
+      <ion-col>
+        <p></p>
+        <p class="change">Thay đổi</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="order">
+      <span class="brief">Tóm tắt đơn hàng</span>
+      <span class="add" (click)="addMore()">Thêm chỗ</span>
+    </ion-row>
+      <ion-row  class="order-item">
+        <div class="food">
+          <span class="amount">{{booking.amount}}X</span>
+          <span class="food">{{booking.book_type}}</span>
+        </div>
+      <span>{{booking.amount * 15000 |  currency:'VND':'symbol'}}</span>
+    </ion-row>
+
+    <ion-row class="note">
+      <ion-textarea [(ngModel)]="note" placeholder="Ghi chú cho chỗ ngồi ..." [value]="note"></ion-textarea>
+    </ion-row>
+    <ion-row class="price"> 
+      <ion-col>
+        <p>Phí đặt chỗ trước</p>
+        <p>TẠM TÍNH</p>
+      </ion-col>
+      <ion-col class="cost">
+        <span>{{booking.amount * 15000 |  currency:'VND':'symbol'}}</span>
+        <span class="cost-temp">{{booking.amount * 15000 |  currency:'VND':'symbol'}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row class="promotion">
+      <p>Mã khuyến mãi</p>
+      <input [(ngModel)]="code" placeholder="Nhập mã khuyến mãi..."/>
+      <button (click)="applyPromotion()">OK</button>
+
+    </ion-row>
+    <ion-row>
+    </ion-row>
+    <ion-row class="tyof-pay">
+      <ion-col class="type-of">
+        <p>Phương thức thanh toán</p>
+        <p>Tiền mặt</p>
+      </ion-col>
+      <ion-col>
+        <p></p>
+        <!-- <img src="assets/icon/rightarrow.png"/> -->
+      </ion-col>
+    </ion-row>
+    <div class="pay">
+      <span>THANH TOÁN TRƯỚC</span>
+      <span>{{totalPrice | currency:'VND':'symbol':'3.0':'vi'}}</span>
+    </div>
+    <ion-row class="submit">
+      <button (click)="order()">XÁC NHẬN ĐẶT CHỖ</button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

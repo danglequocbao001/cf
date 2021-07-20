@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+    <div class="back" (click)="back()">
+      <img src="assets/images/back.svg"/>
+    </div>
+  <div class="border-header">
+  </div>
+  <p>ĐẶT CHỖ COFFEE</p>
+  <ion-item-group class="booking-coffee">
+    <img src="assets/images/booking-img/cafe.jpg"/>
+  </ion-item-group>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <div class="choosetype">
+          <ion-label>Chọn không gian</ion-label>
+          <ion-select placeholder="Chọn kiểu đặt chỗ" [(ngModel)]="type">
+            <ion-select-option *ngFor="let floor of floors" [value]="floor.id">{{floor.floor}}</ion-select-option>
+          </ion-select>
+        </div>
+        <ion-item-group class="amount">
+          <ion-text>Số lượng</ion-text>
+          <ion-input type="number" [(ngModel)]="number" placeholder=""></ion-input>
+        </ion-item-group>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="date">
+    <ion-col class="ion-no-padding year">
+      <ion-label>Ngày đến</ion-label>
+      <ion-datetime placeholder="Chọn ngày đến" [(ngModel)]="date" displayFormat="DD/MM/YYYY"></ion-datetime>
+    </ion-col>
+    <ion-col class="ion-no-padding hours">
+        <ion-label position="floating">Giờ đến</ion-label>
+        <ion-datetime placeholder="Chọn" [(ngModel)]="time" displayFormat="HH:mm"></ion-datetime>
+    </ion-col>
+  </ion-row>
+  <div class="long">
+    <div class="choosetime">
+      <ion-label>Bạn sẽ ngồi bao lâu?</ion-label>
+      <ion-select placeholder="Chọn thời gian" [(ngModel)]="hourstay">
+        <ion-select-option *ngFor="let time of longtime" [value]="time.time">{{time.time}}</ion-select-option>
+
+      </ion-select>
+    </div>
+  </div>
+  <div class="action">
+    <ion-button (click)="gotodetail()" [disabled]="check()">Đồng ý</ion-button>
+  </div>
+</ion-content>
+<section class="cart">
+  <strong>{{number === 0? 0 : number}}</strong>
+  <strong>CHỖ ĐÃ ĐẶT</strong>
+  <strong>{{number * 15000 |  currency:'VND':'symbol'}}</strong>
+</section>

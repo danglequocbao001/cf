@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border content-header-menu" >
+    <section class="header-title">
+        <div class="back">
+            <img src="assets/images/back.svg" (click)="back()" />
+        </div>
+        <div class="content-address">
+            <p></p>
+            <div class="address-title">
+                <p>Giao hàng đến</p>
+                <strong>{{ customerLocation.address }}</strong>
+            </div>
+            <strong class="change-address">Thay đổi</strong>
+        </div>
+        <div class="none">
+
+        </div>
+    </section>
+
+    <div class="search">
+        <ion-input placeholder="Tìm kiếm ..." (keyup)="getKey($event)" (keyup)="getSearch()" type="search"></ion-input>
+        <ion-img src="assets/images/search.svg" alt="" class="img" (click)="getSearch()"></ion-img>
+    </div>
+    <div class="group">
+        <div class="group-product" (ionChange)="segmentChanged($event)">
+            <span *ngFor="let item of menuProduct" (click)="changeTabs(item.id)" [ngClass]="{'active':Tab===item.id }"
+                class="button-segment">{{item.name}}</span>
+        </div>
+
+    </div>
+</ion-header>
+<ion-content>
+    <ion-row class="list-menu">
+        <div *ngFor="let product of products" (click)="presentModal(product.id)" class="product">
+            <div class="content">
+                <img class="img" onerror="this.src='../../assets/images/registersuc.png';" [src]= "product.product_image">
+                <div class="content-product">
+                    <p>{{product.name}}</p>
+                </div>
+            </div>
+            <ion-button class="price">
+                <ion-text class="ion-text-center">{{product.price | currency:' ':'symbol':'3.0':'vi'}}</ion-text>
+                <ion-img src="assets/images/add.svg" class="add-button"></ion-img>
+            </ion-button>
+        </div>
+    </ion-row>
+</ion-content>
+<section class="cart" (click)="gotoDetail()" (checkedChange)="switchesValueChange($event, i)">
+    <strong>{{totalOrder.amount}} Món</strong>
+    <strong>GIỎ HÀNG</strong>
+    <strong>{{totalOrder.totalPrice === 0 ? 0 : totalOrder.totalPrice |
+        currency:'VND':'symbol':'3.0':'vi'}}{{totalOrder.totalPrice === 0 ? 'đ' : ''}}</strong>
+</section>

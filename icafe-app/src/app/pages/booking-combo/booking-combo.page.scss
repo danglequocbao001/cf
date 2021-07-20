@@ -1,0 +1,90 @@
+ion-header {
+  position: relative;
+  margin-bottom: 30vh;
+    .back{
+        background-color: #64C18E;
+        margin-top: -2px;
+        img{
+            padding: 6px;   
+            width: 60px;
+            display: flex;
+            margin-left: 10px;
+            padding-top: 20px;
+        }
+    }
+    .border-header {
+      position: fixed;
+      width: 100vw;
+      background-color: #64C18E;
+      border-radius: 0px 0px 35px 35px;
+      /*smartphone*/
+      @media screen and (max-width: 768px){
+        height: 150px;
+      }
+      /*tablet nhỏ*/
+      @media screen and (min-width: 768px){
+        height: 220px;
+      }
+      /*Tablet lớn*/
+      @media screen and (min-width: 1024px){
+        height: 280px;
+      }
+    }
+      p {
+        color: #FFFFFF;
+        font: Bold 23px/70px Montserr at;
+        z-index: 21;
+        position: inherit;
+        text-align: center; 
+        font-size: 30px;
+      }
+      ion-img {
+        z-index: 10;
+        width: 165px;
+        margin: -20px auto 0px auto;
+        position: inherit;
+      }
+      .booking-coffee{
+        width: 80vw;
+        left: 10%;
+        position: absolute;
+        display: flex;
+        img{
+            border-radius: 30px;
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+          }
+        }
+      }
+
+  ion-content{
+    section {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      ion-button {
+        width: 90vw;
+        height: 5rem;
+        --background: #77CCDE;
+        --box-shadow: 6px 9px 3px -4px rgba(0,0,0,0.38);
+        margin-top: 20px;
+        --border-radius: 20px;
+        ion-img {
+          width: 4rem;
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            display: flex;
+            margin-top: 12px;
+            p{
+                text-align: left;
+                font-style: italic;
+            }
+        }
+      }
+    }
+  }

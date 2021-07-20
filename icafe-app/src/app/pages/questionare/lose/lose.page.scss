@@ -1,0 +1,35 @@
+ion-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    ion-header {
+        width: 320px;
+        height: 300px;
+        border-radius: 20px;
+        ion-col {
+            ion-img {
+                display: block;
+                margin: auto;
+                width: 122px;
+                height: 100px;
+                margin-top: 60px;
+            }
+            ion-label {
+                margin-top: 30px;
+                margin-bottom: 5px;
+                display: block;
+                margin-left: 70px;
+                font-size: 15px;
+                color: #64C18E;
+            }
+            ion-button {
+                display: block;
+                width: 250px;
+                margin: auto;
+                --background: #64C18E;
+                --color: #ffffff;
+            }
+        }
+    }
+}
